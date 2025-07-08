@@ -47,6 +47,7 @@ Several important columns contain a significant number of missing values:
 *These missing values are mostly found in open or pending tickets that haven't been resolved yet.*
 
 **Column Summary**
+
 Below is a brief overview of the main columns:
 - Ticket ID: Unique identifier for each support request
 - Customer Name / Email / Age / Gender: Customer demographics
