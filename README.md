@@ -84,6 +84,6 @@ Below is a brief overview of the main columns:
 - Created a new feature to measure the handling time between first response and final resolution.
 - Identified unexpected patterns where some tickets were resolved before any recorded response, suggesting differences in workflow or urgency depending on ticket type or channel.
 - These patterns may indicate:
- - Automated backend resolutions,
- - Customer support prioritization behavior,
- - Or delayed communication to customers.
+  - Automated backend resolutions,
+  - Customer support prioritization behavior,
+  - Or delayed communication to customers.
