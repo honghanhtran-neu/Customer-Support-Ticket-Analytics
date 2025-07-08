@@ -29,3 +29,37 @@ To support relevant departments such as the **Head of Customer Support, Product 
 - How has customer behavior changed between 2020 and 2021?
 
 ## 3. Data Understanding 🔍
+✅ **Dataset Overview**
+- Shape: 8,469 rows × 17 columns
+- Duplicate rows: None
+- Date fields are in string format and need to be parsed into proper datetime objects for analysis.
+🔎 **Missing Data**
+Several important columns contain a significant number of missing values:
+| Column | Null Values | % Missing |
+|-----------|-----------|-----------|
+| Resolution    | 5,700 | ~67.3% |
+| First Response Time    | 2,819 | ~33.3% |
+| Time to Resolution    | 5,700 | ~67.3% |
+| Customer Satisfaction Rating    | 5,700 | ~67.3% |
+
+These missing values are mostly found in open or pending tickets that haven't been resolved yet.
+🧾 **Column Summary**
+Below is a brief overview of the main columns:
+- Ticket ID: Unique identifier for each support request
+- Customer Name / Email / Age / Gender: Customer demographics
+- Product Purchased: Name of the purchased item
+- Date of Purchase: Date of transaction (currently in string format)
+- Ticket Type / Subject / Description: Nature of the issue
+- Ticket Status: Current status (e.g., Closed, Open)
+- Resolution: Final resolution (often missing)
+- Ticket Priority: Level of urgency (Low → Critical)
+- Ticket Channel: Contact method (Email, Chat, Phone...)
+- First Response Time: When support responded (string format)
+- Time to Resolution: When issue was resolved (string format)
+- Customer Satisfaction Rating: Feedback score (1–5)
+
+🧠 **Key Insights**
+- No structural issues like corrupted records or duplicate rows were found.
+- Missing values are informative and expected for unresolved tickets.
+- Date/time fields are inconsistently formatted and must be standardized.
+- Ticket priority and channel could be key drivers in predicting response/resolution time.
