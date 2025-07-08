@@ -115,3 +115,6 @@ Below is a brief overview of the main columns:
 **Handling Time (First Response → Resolution)**
 - The distribution of handling time is approximately normal but slightly skewed to the right.
 - A significant number of tickets show negative handling time, meaning resolutions occurred before the first customer response.
+
+### 5.2. Bivariate Analysis
+
