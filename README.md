@@ -11,30 +11,30 @@ This lack of visibility makes it difficult for the company to **measure performa
 ## 2. Key Business Questions
 To support relevant departments such as the **Head of Customer Support, Product Managers**, and the **CRM/Marketing Team** in enhancing their performance and uncovering actionable trends, this project aims to address the following key business questions:
 
-📌 **Operational Performance**
+**Operational Performance**
 - What is the average time taken to respond to and resolve a ticket?
 - What percentage of tickets are resolved within SLA targets?
 - Are high-priority tickets actually being prioritized in practice?
 
-⚠️ **Bottlenecks**
+**Bottlenecks**
 - Which support channels tend to have slower response times?
 - Are there recurring issues or frequently reported product-related complaints?
 
-😊 **Customer Experience**
+**Customer Experience**
 - How does customer satisfaction vary across different products, channels, or time periods?
 - Can we predict which tickets are at risk of receiving low satisfaction scores?
 
-📈 **Trends and Seasonality**
+**Trends and Seasonality**
 - Are there specific months with unusually high ticket volumes?
 - How has customer behavior changed between 2020 and 2021?
 
 ## 3. Data Understanding
-✅ **Dataset Overview**
+**Dataset Overview**
 - Shape: 8,469 rows × 17 columns
 - Duplicate rows: None
 - Date fields are in string format and need to be parsed into proper datetime objects for analysis.
 
-🔎 **Missing Data**
+**Missing Data**
 
 Several important columns contain a significant number of missing values:
 | Column                        | Null Values | % Missing |
@@ -46,7 +46,7 @@ Several important columns contain a significant number of missing values:
 
 *These missing values are mostly found in open or pending tickets that haven't been resolved yet.*
 
-🧾 **Column Summary**
+**Column Summary**
 Below is a brief overview of the main columns:
 - Ticket ID: Unique identifier for each support request
 - Customer Name / Email / Age / Gender: Customer demographics
@@ -61,7 +61,7 @@ Below is a brief overview of the main columns:
 - Time to Resolution: When issue was resolved (string format)
 - Customer Satisfaction Rating: Feedback score (1–5)
 
-🧠 **Key Insights**
+**Key Insights**
 - No structural issues like corrupted records or duplicate rows were found.
 - Missing values are informative and expected for unresolved tickets.
 - Date/time fields are inconsistently formatted and must be standardized.
@@ -69,18 +69,18 @@ Below is a brief overview of the main columns:
 
 ## 4. Data Cleaning & Preprocessing
 
-✅ Data Type Handling
+**Data Type Handling**
 - Converted date-related fields to proper datetime format, enabling accurate time-based analysis such as resolution time calculations.
 
-🧹 Text Cleaning
+**Text Cleaning**
 - Cleaned and lemmatized the Ticket Description and Resolution columns to standardize text and prepare for further NLP analysis or clustering.
 - This allows for improved understanding of common customer issues and support responses.
 
-❓ Missing Values
+**Missing Values**
 - Missing values in key fields like Resolution, First Response Time, and Customer Satisfaction Rating were labeled (instead of filled) to retain the context (e.g., unresolved tickets or ongoing cases).
 - This tagging supports more accurate filtering and modeling later on.
 
-🕒 Time-Based Features
+**Time-Based Features**
 - Created a new feature to measure the handling time between first response and final resolution.
 - Identified unexpected patterns where some tickets were resolved before any recorded response, suggesting differences in workflow or urgency depending on ticket type or channel.
 - These patterns may indicate:
