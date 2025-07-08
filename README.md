@@ -1,6 +1,6 @@
 # Customer Support Ticket Analytics
 
-## 1. Business Context 🧠
+## 1. Business Context
 The company operates a **multi-channel customer support system** (including chat, phone, social media, email) to handle technical issues and service requests from customers. Each customer request is logged in the system as a support ticket.
 However, the current system lacks visibility in several key areas:
 - Overall status and volume of incoming tickets
@@ -8,7 +8,7 @@ However, the current system lacks visibility in several key areas:
 - Satisfaction levels of customers by time, channel, or product
 This lack of visibility makes it difficult for the company to **measure performance, identify bottlenecks, and make data-driven decisions** to enhance the customer experience.
 
-## 2. Key Business Questions 🎯
+## 2. Key Business Questions
 To support relevant departments such as the **Head of Customer Support, Product Managers**, and the **CRM/Marketing Team** in enhancing their performance and uncovering actionable trends, this project aims to address the following key business questions:
 
 📌 **Operational Performance**
@@ -28,13 +28,14 @@ To support relevant departments such as the **Head of Customer Support, Product 
 - Are there specific months with unusually high ticket volumes?
 - How has customer behavior changed between 2020 and 2021?
 
-## 3. Data Understanding 🔍
+## 3. Data Understanding
 ✅ **Dataset Overview**
 - Shape: 8,469 rows × 17 columns
 - Duplicate rows: None
 - Date fields are in string format and need to be parsed into proper datetime objects for analysis.
 
 🔎 **Missing Data**
+
 Several important columns contain a significant number of missing values:
 | Column                        | Null Values | % Missing |
 |------------------------------|-------------|-----------|
@@ -43,7 +44,8 @@ Several important columns contain a significant number of missing values:
 | Time to Resolution           | 5,700       | ~67.3%    |
 | Customer Satisfaction Rating | 5,700       | ~67.3%    |
 
-These missing values are mostly found in open or pending tickets that haven't been resolved yet.
+*These missing values are mostly found in open or pending tickets that haven't been resolved yet.*
+
 🧾 **Column Summary**
 Below is a brief overview of the main columns:
 - Ticket ID: Unique identifier for each support request
@@ -51,10 +53,10 @@ Below is a brief overview of the main columns:
 - Product Purchased: Name of the purchased item
 - Date of Purchase: Date of transaction (currently in string format)
 - Ticket Type / Subject / Description: Nature of the issue
-- Ticket Status: Current status (e.g., Closed, Open)
+- Ticket Status: Current status (Closed, Open, Pending)
 - Resolution: Final resolution (often missing)
 - Ticket Priority: Level of urgency (Low → Critical)
-- Ticket Channel: Contact method (Email, Chat, Phone...)
+- Ticket Channel: Contact method (Email, Chat, Phone, Social Media)
 - First Response Time: When support responded (string format)
 - Time to Resolution: When issue was resolved (string format)
 - Customer Satisfaction Rating: Feedback score (1–5)
@@ -64,3 +66,24 @@ Below is a brief overview of the main columns:
 - Missing values are informative and expected for unresolved tickets.
 - Date/time fields are inconsistently formatted and must be standardized.
 - Ticket priority and channel could be key drivers in predicting response/resolution time.
+
+## 4. Data Cleaning & Preprocessing
+
+✅ Data Type Handling
+- Converted date-related fields to proper datetime format, enabling accurate time-based analysis such as resolution time calculations.
+
+🧹 Text Cleaning
+- Cleaned and lemmatized the Ticket Description and Resolution columns to standardize text and prepare for further NLP analysis or clustering.
+- This allows for improved understanding of common customer issues and support responses.
+
+❓ Missing Values
+- Missing values in key fields like Resolution, First Response Time, and Customer Satisfaction Rating were labeled (instead of filled) to retain the context (e.g., unresolved tickets or ongoing cases).
+- This tagging supports more accurate filtering and modeling later on.
+
+🕒 Time-Based Features
+- Created a new feature to measure the handling time between first response and final resolution.
+- Identified unexpected patterns where some tickets were resolved before any recorded response, suggesting differences in workflow or urgency depending on ticket type or channel.
+- These patterns may indicate:
+ - Automated backend resolutions,
+ - Customer support prioritization behavior,
+ - Or delayed communication to customers.
