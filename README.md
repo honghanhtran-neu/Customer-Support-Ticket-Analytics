@@ -87,3 +87,30 @@ Below is a brief overview of the main columns:
   - Automated backend resolutions,
   - Customer support prioritization behavior,
   - Or delayed communication to customers.
+
+## 5. Exploratory Data Analysis (EDA)
+### 5.1. Univariate Analysis
+
+**Customer Age Distribution**
+- The distribution is relatively uniform across age groups from 18 to 70.
+- Slight dips in some age bins may be due to sampling or market penetration gaps.
+
+**Customer Gender Distribution**
+- The gender distribution is balanced across all three categories: Female, Male, and Other.
+- Indicates inclusivity or neutrality in customer engagement.
+
+**Ticket Type Frequency**
+- Most common issues include Refund Requests and Technical Issues.
+- Billing Inquiries and Product Inquiries are slightly less frequent, suggesting relatively fewer product-related complaints or confusion.
+
+**Ticket Channel Distribution**
+- All support channels are used relatively equally: Email, Phone, Social Media, and Chat.
+- This implies customers have diverse preferences when reaching out to support.
+
+**Customer Satisfaction Ratings**
+- The ratings are nearly uniformly distributed from 1 to 5.
+- Suggests inconsistency in service quality or high variation across different ticket types and agents.
+
+**Handling Time (First Response → Resolution)**
+- The distribution of handling time is approximately normal but slightly skewed to the right.
+- A significant number of tickets show negative handling time, meaning resolutions occurred before the first customer response.
