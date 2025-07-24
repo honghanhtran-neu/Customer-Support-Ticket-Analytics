@@ -65,7 +65,7 @@ Below is a brief overview of the main columns:
 **Key Insights**
 - No structural issues like corrupted records or duplicate rows were found.
 - Missing values are informative and expected for unresolved tickets.
-- Date/time fields are inconsistently formatted and must be standardized.
+- Datetime fields are inconsistently formatted and must be standardized.
 - Ticket priority and channel could be key drivers in predicting response/resolution time.
 
 ## 4. Data Cleaning & Preprocessing
